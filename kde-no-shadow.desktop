@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/usr/local/bin/kde-no-shadow
+Icon=dialog-scripts
+Name=kde-no-shadow
+Path=
+Type=Application
+X-KDE-AutostartScript=true

@@ -1,0 +1,21 @@
+{
+	"windowStyle": "native",
+	"armcordCSP": true,
+	"minimizeToTray": true,
+	"startMinimized": false,
+	"tray": true,
+	"automaticPatches": false,
+	"inviteWebsocket": true,
+	"mobileMode": false,
+	"alternativePaste": false,
+	"disableAutogain": false,
+	"dynamicIcon": false,
+	"spellcheck": true,
+	"channel": "stable",
+	"mods": "vencord",
+	"performanceMode": "performance",
+	"trayIcon": "dsc-tray",
+	"skipSplash": true,
+	"useLegacyCapturer": false,
+	"doneSetup": true
+}

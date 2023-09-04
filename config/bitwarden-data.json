@@ -1,0 +1,13 @@
+{
+	"global.vaultTimeout": -1,
+	"global.vaultTimeoutAction": "lock",
+	"global": {
+		"theme": "dark",
+		"openAtLogin": true,
+		"region": "US",
+		"enableTray": true,
+		"enableStartToTray": true,
+		"enableCloseToTray": true,
+		"locale": "en-GB"
+	}
+}
