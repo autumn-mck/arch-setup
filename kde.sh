@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-pacman -Syu --needed --noconfirm $(cat ./kde-packages)
+paru -Syu --needed --noconfirm $(cat ./kde-packages)
 
 balooctl suspend
 balooctl disable
@@ -22,12 +22,15 @@ sudo cp -r "$HOME/.local/share/icons/Catppuccin-Macchiato-Mauve-Cursors/" "/usr/
 papirus-folders -C cat-macchiato-mauve
 
 # GTK theme
-git clone --recurse-submodules git@github.com:catppuccin/gtk.git catppuccin-gtk && cd "./catppuccin-gtk"
-paru -S python-catppuccin
+git clone --recurse-submodules https://github.com/catppuccin/gtk catppuccin-gtk && cd "./catppuccin-gtk"
+virtualenv -p python3 venv  # to be created only once and only if you need a virtual env
+source venv/bin/activate
+pip install -r requirements.txt
 python install.py macchiato -a mauve --tweaks rimless normal -d "$XDG_DATA_HOME/themes" -l
 cd ..
 rm -rf catppuccin-gtk/
-paru -Rs python-catppuccin
+
+sudo hardcode-tray -a
 
 # no shadow on bar
 sudo cp "./config/kde-no-shadow" "/usr/local/bin/kde-no-shadow"
@@ -168,5 +171,6 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "W
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Window One Desktop to the Right" "Meta+Ctrl+Shift+Right,Meta+Ctrl+Shift+Right,Window One Desktop to the Right"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group "org.kde.dolphin.desktop" --key _launch "Meta+D,Meta+D,Dolphin"
 
+sudo mkdir -p "/etc/sddm.conf.d/"
 sudo cp "./config/sddm_kde_settings.conf" "/etc/sddm.conf.d/kde_settings.conf"
 systemctl enable sddm.service

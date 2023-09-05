@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+source "$HOME/.config/environment.d/env-vars.conf"\
+
 # git config
 git config --global init.defaultBranch main
 
@@ -25,11 +27,15 @@ paru -S --needed --noconfirm $(cat ./aur-packages)
 
 # misc
 sudo ln -sf "/usr/share/fontconfig/conf.avail/75-twemoji.conf" "/etc/fonts/conf.d/75-twemoji.conf"
-sudo hardcode-tray -a
+mkdir -p "$XDG_CONFIG_HOME/ArmCord/storage/"
 cp "./config/armcord-settings.json" "$XDG_CONFIG_HOME/ArmCord/storage/settings.json"
+mkdir -p "$XDG_CONFIG_HOME/Bitwarden/"
 cp "./config/bitwarden-data.json" "$XDG_CONFIG_HOME/Bitwarden/data.json"
+mkdir -p "$XDG_CONFIG_HOME/neofetch/"
 cp "./config/neofetch_config.conf" "$XDG_CONFIG_HOME/neofetch/config.conf"
+mkdir -p "$XDG_CONFIG_HOME/tldr/"
 cp "./config/tealdeer_config.toml" "$XDG_CONFIG_HOME/tldr/config.toml"
+mkdir -p "$XDG_CONFIG_HOME/kitty/"
 cp "./config/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 
 
@@ -38,13 +44,12 @@ gsettings set org.gnome.desktop.interface font-antialiasing \'rgba\'
 gsettings set org.gnome.desktop.interface gtk-theme \'Catppuccin-Macchiato-Standard-Mauve-dark\'
 
 # syncthing
+systemctl --user enable --now syncthing.service
 syncthing cli config folders add --id qg4t0-4eepi --label "Android Camera" --path "$HOME/Pictures/AndroidCamera"
 syncthing cli config folders add --id upigg-w6x5l --label "Desktop"        --path "$HOME/Desktop"
 syncthing cli config folders add --id 3yaff-abx57 --label "Documents"      --path "$HOME/Documents/Documents"
 syncthing cli config folders add --id rsjpd-6ubkv --label "Music Backup"   --path "$HOME/Music/MusicBackup"
 syncthing cli config folders add --id kjmaq-xt5wt --label "Music Main"     --path "$HOME/Music/MusicMain"
-
-systemctl --user enable --now syncthing.service
 
 sh ./fish.sh
 sh ./kde.sh
