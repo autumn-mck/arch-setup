@@ -96,6 +96,7 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Plugins --key forceblurEn
 
 ## bismuth
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-bismuth --key enableFloatingLayout "true"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-bismuth --key keepFloatAbove "false"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-bismuth --key enableMonocleLayout "false"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-bismuth --key floatingClass "musicbee.exe,steam,systemsettings"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-bismuth --key noTileBorder "true"
