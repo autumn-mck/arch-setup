@@ -3,6 +3,7 @@ base-devel
 
 nano
 wget
+less
 xdg-utils
 desktop-file-utils
 unzip

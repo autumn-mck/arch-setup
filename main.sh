@@ -33,11 +33,12 @@ mkdir -p "$XDG_CONFIG_HOME/Bitwarden/"
 cp "./config/bitwarden-data.json" "$XDG_CONFIG_HOME/Bitwarden/data.json"
 mkdir -p "$XDG_CONFIG_HOME/neofetch/"
 cp "./config/neofetch_config.conf" "$XDG_CONFIG_HOME/neofetch/config.conf"
-mkdir -p "$XDG_CONFIG_HOME/tldr/"
+mkdir -p "$XDG_CONFIG_HOME/tealdeer/"
 cp "./config/tealdeer_config.toml" "$XDG_CONFIG_HOME/tldr/config.toml"
 mkdir -p "$XDG_CONFIG_HOME/kitty/"
 cp "./config/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 
+cp "./config/wallpaper.jpg" "$XDG_CONFIG_HOME/wallpaper"
 
 # gsettings stuff
 gsettings set org.gnome.desktop.interface font-antialiasing \'rgba\'

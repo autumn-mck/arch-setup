@@ -51,12 +51,13 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key fixed "
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key menuFont "IBM Plex Sans,10,-1,5,50,0,0,0,0,0"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key smallestReadableFont "IBM Plex Sans,8,-1,5,50,0,0,0,0,0"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key toolBarFont "IBM Plex Sans,10,-1,5,50,0,0,0,0,0"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group WM --key activeFont "IBM Plex Sans,10,-1,5,50,0,0,0,0,0"
 
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key widgetStyle "Lightly"
 
 ## Icons
 
-kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group Icons --key Theme "Papirus-Dark"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/kdeglobals" --group Icons --key Theme "Papirus-Dark" # TODO why was this not applied?
 
 ## KDE
 
@@ -90,7 +91,7 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group org.kde.kdecoration2 --ke
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group org.kde.kdecoration2 --key theme "Lightly"
 
 ## forceblur
-kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-forceblur --key patterns "yakuake\nurxvt\nkeepassxc\nkitty"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-forceblur --key patterns $(printf "yakuake\nurxvt\nkeepassxc\nkitty")
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Plugins --key forceblurEnabled "true"
 
 ## bismuth
@@ -106,7 +107,7 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-bismuth --key tile
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Plugins --key bismuthEnabled "true"
 
 # ksplashrc
-kwriteconfig5 --file "$XDG_CONFIG_HOME/ksplashrc" --group KSplash --key theme "Catppuccin-Macchiato-Mauve-splash"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/ksplashrc" --group KSplash --key Theme "Catppuccin-Macchiato-Mauve-splash"
 
 # ksmserverrc
 kwriteconfig5 --file "$XDG_CONFIG_HOME/ksmserverrc" --group General --key loginMode "emptySession"
@@ -120,6 +121,7 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/krunnerrc" --group Plugins --key baloosea
 
 # kcminputrc
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kcminputrc" --group Mouse --key X11LibInputXAccelProfileFlat "true"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/kcminputrc" --group Mouse --key cursorTheme "Catppuccino-Macchiato-Mauve-Cursors"
 
 # baloofilerc
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kcminputrc" --group "Basic Settings" --key Indexing-Enabled "false"
@@ -133,6 +135,10 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrulesrc" --group "1" --key Descriptio
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrulesrc" --group "1" --key minsize "1,1"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrulesrc" --group "1" --key minsizerule "2"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrulesrc" --group "1" --key types "1"
+
+# dolphinrc
+kwriteconfig5 --file "$XDG_CONFIG_HOME/dolphinrc" --group General --key ShowFullPath "true"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/dolphinrc" --group DetailsMode --key PreviewSize "22"
 
 # lightly config
 kwriteconfig5 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key alpha "15"
@@ -148,6 +154,63 @@ kwriteconfig5 --file "$XDG_CONFIG_HOME/kwinrc" --group Plugins --key kwin4_effec
 # lightlyrc
 kwriteconfig5 --file "$XDG_CONFIG_HOME/lightlyrc" --group Common --key OutlineCloseButton "false"
 kwriteconfig5 --file "$XDG_CONFIG_HOME/lightlyrc" --group Windeco --key DrawBackgroundGradient "false"
+
+# plasma-org.kde.plasma.desktop-appletsrc
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 1 --key "plugin" "org.kde.desktopcontainment"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 1 --key "wallpaperplugin" "org.kde.image"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 1 --group Wallpaper --group org.kde.image --group General --key "Image" "$XDG_CONFIG_HOME/wallpaper"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --key "plugin" "org.kde.panel"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --key "wallpaperplugin" "org.kde.image"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --key "location" "3"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --key "formfactor" "2"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group General --key "AppletOrder" "1;2;3;4;5;6;7;8;9;10;11"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 1 --key "plugin" "org.kde.plasma.kickoff"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 1 --group Configuration --group General --key "primaryActions" "3"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 1 --group Configuration --group General --key "showActionButtonCaptions" "false"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 1 --group Configuration --group General --key "systemFavorites" "lock-screen\\,logout\\,save-session\\,switch-user\\,suspend\\,hibernate\\,reboot\\,shutdown"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 2 --key "plugin" "org.kde.plasma.pager"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 2 --group Configuration --group General --key "wrapPage" "true"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 3 --key "plugin" "org.kde.plasma.icontasks"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 3 --group Configuration --group General --key "launchers" "applications:kitty.desktop,applications:librewolf.desktop,applications:org.kde.dolphin.desktop,applications:MusicBee.desktop,applications:firefoxdeveloperedition.desktop"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 4 --key "plugin" "org.kde.plasma.panelspacer"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --key "plugin" "org.kde.windowtitle"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "primaryActions" "3"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "actionScrollMinimize" "false"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "capitalFont" "false"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "containmentType" "Plasma"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "filterActivityInfo" "false"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "placeHolder" "mrreow :3"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "showIcon" "false"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 5 --group Configuration --group General --key "style" "ApplicationTitle"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 6 --key "plugin" "org.kde.plasma.panelspacer"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 7 --key "plugin" "org.kde.plasma.colorpicker"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 7 --group Shortcuts --key "global" "Meta+Shift+C"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 8 --key "plugin" "org.kde.plasma.marginsseparator"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 9 --key "plugin" "org.kde.plasma.systemtray"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 9 --group Configuration --key "SystrayContainmentId" "8"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 10 --key "plugin" "org.kde.plasma.digitalclock"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 10 --group Configuration --group Appearance --key "showDate" "false"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 11 --key "plugin" "org.kde.windowbuttons"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 11 --group Configuration --group General --key "buttons" "4|5|10|3|2|9"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 2 --group Applets --group 11 --group Configuration --group General --key "containmentType" "Plasma"
+
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 8 --key "plugin" "org.kde.plasma.private.systemtray"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 8 --key "formfactor" "2"
+kwriteconfig5 --file "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc" --group Containments --group 8 --key "location" "3"
+
+
 
 # kglobalshortcutsrc
 kwriteconfig5 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group bismuth --key _k_friendly_name "Window Tiling"
