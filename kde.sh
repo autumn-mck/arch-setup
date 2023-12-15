@@ -30,7 +30,7 @@ python install.py macchiato -a mauve --tweaks rimless normal -d "$XDG_DATA_HOME/
 cd ..
 rm -rf catppuccin-gtk/
 
-sudo hardcode-tray -a
+# sudo hardcode-tray -a
 
 # no shadow on bar
 sudo cp "./config/kde-no-shadow" "/usr/local/bin/kde-no-shadow"
