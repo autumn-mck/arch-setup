@@ -32,6 +32,7 @@ tealdeer
 bat
 shellcheck
 
+python-virtualenv
 python-pipx
 rustup
 
