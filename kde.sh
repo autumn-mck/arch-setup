@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+source "$HOME/.config/environment.d/env-vars.conf"
+
 paru -Syu --needed --noconfirm $(cat ./kde-packages)
 
 balooctl suspend
