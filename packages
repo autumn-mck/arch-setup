@@ -22,6 +22,9 @@ lib32-pipewire
 wireplumber
 alsa-utils
 
+bluez
+bluez-utils
+
 kitty
 
 docker
