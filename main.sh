@@ -5,6 +5,8 @@ source "$HOME/.config/environment.d/env-vars.conf"
 
 systemctl --user enable --now syncthing.service
 
+sudo systemctl enable --now bluetooth
+
 # git config
 git config --global init.defaultBranch main
 
