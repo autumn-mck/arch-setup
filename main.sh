@@ -42,8 +42,6 @@ cp "./config/tealdeer_config.toml" "$XDG_CONFIG_HOME/tldr/config.toml"
 mkdir -p "$XDG_CONFIG_HOME/kitty/"
 cp "./config/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 
-cp "./config/wallpaper.jpg" "$XDG_CONFIG_HOME/wallpaper"
-
 # gsettings stuff
 gsettings set org.gnome.desktop.interface font-antialiasing \'rgba\'
 gsettings set org.gnome.desktop.interface gtk-theme \'Catppuccin-Macchiato-Standard-Mauve-dark\'
