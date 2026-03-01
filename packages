@@ -1,90 +1,150 @@
 base
 base-devel
+
+# system
+reflector
+rsync
+
+pkgstats
+ufw
+fwupd
 dosfstools
 
-nano
-wget
-less
-unzip
-p7zip
-unrar
-rsync
-mandoc
-reflector
 xdg-utils
 desktop-file-utils
 
+
+# compression
+unzip
+7zip
+p7zip
+unrar
+unarchiver
+lrzip
+lzop
+
+
+# audio
 pipewire
 pipewire-audio
 pipewire-pulse
 pipewire-alsa
 pipewire-jack
 lib32-pipewire
+gst-plugin-pipewire
 wireplumber
 alsa-utils
 
+opus-tools
+
+# bluetooth
 bluez
 bluez-utils
 
+
+# terminal
 kitty
 
-docker
-docker-compose
-
-neofetch
+fastfetch
 hyfetch
-bottom
+
+less
+bat
+glow
+
 fzf
 tree
-git
+
+mandoc
 tealdeer
-bat
+
+whois
+nano
+bottom
+
+
+# image/svg
+imagemagick
+inkscape
+gimp
+jxrlib
+
+
+# media
+mpv
+handbrake
+obs-studio
+
+gst-plugins-good
+gst-plugins-bad
+gst-plugins-ugly
+gst-libav
+
+
+# devel
+podman
+podman-compose
+podman-docker
+
+git
+codespell
+distrobox
+rust
 shellcheck
 
-python-virtualenv
-python-pipx
-rustup
-
-dotnet-runtime
-aspnet-runtime
-dotnet-sdk
-
+# js devel
 nodejs
 npm
 pnpm
 yarn
+bun
 
-imagemagick
-inkscape
-gimp
+# dotnet devel
+dotnet-runtime
+aspnet-runtime
+dotnet-sdk
+
+# python devel
+uv
+
+
+# games
+prismlauncher
+steam
+
+
+# chat
+signal-desktop
+element-desktop
+
+
+# misc software
+libreoffice-fresh
+libreoffice-fresh-en-gb
+
+firefox-developer-edition
+firefox-developer-edition-i18n-en-gb
+
+protonmail-bridge
+thunderbird
+thunderbird-i18n-en-gb
+
+bitwarden
+syncthing
+qbittorrent
+obsidian
+godot
+
+
+# misc other
+wine
+winetricks
+lib32-gnutls
 
 xdotool
 xorg-server-xvfb
 
-ttf-ibm-plex
-
-firefox-developer-edition
-firefox-developer-edition-i18n-en-gb
-thunderbird
-thunderbird-i18n-en-gb
-
-element-desktop
-libreoffice-fresh
-libreoffice-fresh-en-gb
-bitwarden
-syncthing
-vlc
-steam
-qbittorrent
-
-wine
-winetricks
-
-whois
-godot
-handbrake
-obs-studio
-
-geekbench
 openssh
 android-tools
+ttf-ibm-plex
+cava

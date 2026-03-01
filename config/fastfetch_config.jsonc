@@ -1,0 +1,97 @@
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"logo": {
+		"type": "builtin",
+		"source": "arch3",
+		"height": 15,
+		"width": 30,
+		"padding": {
+			"top": 0,
+			"left": 3
+		}
+	},
+	"modules": [
+		"break",
+		{
+			"type": "host",
+			"key": "PC",
+			"keyColor": "green"
+		},
+		{
+			"type": "cpu",
+			"key": "├󰍛",
+			"keyColor": "green"
+		},
+		{
+			"type": "memory",
+			"key": "├󱘲",
+			"keyColor": "green"
+		},
+		{
+			"type": "disk",
+			"key": "└",
+			"keyColor": "green"
+		},
+		"break",
+		{
+			"type": "os",
+			"key": "OS",
+			"keyColor": "yellow"
+		},
+		{
+			"type": "kernel",
+			"key": "├󰻀",
+			"keyColor": "yellow"
+		},
+		{
+			"type": "packages",
+			"key": "├󰏖",
+			"keyColor": "yellow"
+		},
+		{
+			"type": "shell",
+			"key": "└󰈺",
+			"keyColor": "yellow"
+		},
+		"break",
+		{
+			"type": "de",
+			"key": "DE",
+			"keyColor": "blue"
+		},
+		{
+			"type": "custom",
+			"key": "├",
+			"keyColor": "blue",
+			"format": "Tiling (Krohnkite)"
+		},
+		{
+			"type": "custom",
+			"key": "├󰉼",
+			"keyColor": "blue",
+			"format": "Catppuccin Macchiato Mauve"
+		},
+		{
+			"type": "terminal",
+			"key": "└",
+			"keyColor": "blue"
+		},
+		"break",
+		{
+			"type": "localip",
+			"key": "NW",
+			"keyColor": "magenta"
+		},
+		{
+			"type": "title",
+			"key": "└󰀄",
+			"keyColor": "magenta"
+		},
+		"break",
+		{
+			"type": "colors",
+			"paddingLeft": 1,
+			"symbol": "circle"
+		}
+	]
+}

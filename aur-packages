@@ -1,10 +1,5 @@
 vesktop
-prismlauncher-qt5-bin
-protonmail-bridge-bin
-
-cava
 xdg-ninja
-hardcode-tray-git
 
 ttf-ms-win11-auto
 ttf-twemoji
@@ -14,6 +9,8 @@ mullvad-vpn-bin
 librewolf-bin
 ungoogled-chromium-bin
 
-bun-bin
 visual-studio-code-bin
 xpadneo-dkms
+helium-browser-bin
+itch-bin
+ttf-mononoki

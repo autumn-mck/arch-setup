@@ -17,4 +17,4 @@ cd arch-setup
 ./amd.sh
 ```
 
-![image](https://github.com/autumn-mck/arch-setup/assets/56560271/f1bf5a77-bfdf-44f3-92d6-2da4c639888b)
+![image](./neofetch.png)

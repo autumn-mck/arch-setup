@@ -20,20 +20,13 @@ gwenview
 bluedevil
 
 ark
-flameshot
-sassc
 
 papirus-icon-theme
 papirus-folders-catppuccin-git
 catppuccin-gtk-theme-macchiato
+catppuccin-cursors-macchiato
 
 kdiskmark
 partitionmanager
 
-lightly-kf6-git
-lightlyshaders-plasma6-git
-
-kwin-polonium
-
-plasma6-applets-window-title
-plasma6-applets-window-buttons
+kinfocenter
