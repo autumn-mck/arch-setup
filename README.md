@@ -17,4 +17,4 @@ cd arch-setup
 ./amd.sh
 ```
 
-![image](./neofetch.png)
+![image](./neofetch.avif)
