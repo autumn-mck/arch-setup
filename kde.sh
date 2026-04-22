@@ -5,9 +5,9 @@ source "$HOME/.config/environment.d/env-vars.conf"
 
 paru -Syu --needed --noconfirm $(cat ./kde-packages)
 
-balooctl suspend
-balooctl disable
-balooctl purge
+balooctl6 suspend
+balooctl6 disable
+balooctl6 purge
 
 # KDE theme
 git clone --depth=1 https://github.com/catppuccin/kde catppuccin-kde && cd "./catppuccin-kde"

@@ -148,3 +148,5 @@ openssh
 android-tools
 ttf-ibm-plex
 cava
+ldns
+wget
