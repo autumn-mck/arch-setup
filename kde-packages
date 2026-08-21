@@ -11,12 +11,14 @@ kscreen
 
 plasma-pa
 plasma-nm
+plasma-firewall
 
 kde-gtk-config
 
 dolphin
 kate
 gwenview
+spectacle
 bluedevil
 
 ark
@@ -28,5 +30,5 @@ catppuccin-cursors-macchiato
 
 kdiskmark
 partitionmanager
-
+qrca
 kinfocenter

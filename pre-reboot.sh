@@ -5,7 +5,13 @@ set -e
 sudo cp "./config/nobeep.conf" "/etc/modprobe.d/nobeep.conf"
 
 # pacman config
-sudo sed -i 's/# Misc options/# Misc options\nColor\nILoveCandy\nColor\nParallelDownloads = 5\nVerbosePkgLists/g' /etc/pacman.conf
+sudo sed -i \
+	-e '/^Color$/d' \
+	-e '/^ILoveCandy$/d' \
+	-e '/^ParallelDownloads = [0-9][0-9]*$/d' \
+	-e '/^VerbosePkgLists$/d' \
+	/etc/pacman.conf
+sudo sed -i '/^# Misc options/a Color\nILoveCandy\nParallelDownloads = 5\nVerbosePkgLists' /etc/pacman.conf
 
 # reflector
 sudo pacman -Syu --needed --noconfirm reflector rsync

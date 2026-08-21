@@ -1,16 +1,15 @@
 {
     "preset": "transgender",
     "mode": "rgb",
+    "auto_detect_light_dark": true,
     "light_dark": "dark",
     "lightness": 0.65,
     "color_align": {
-        "mode": "horizontal",
-        "custom_colors": [],
-        "fore_back": null
+        "mode": "horizontal"
     },
     "backend": "fastfetch",
     "args": null,
-    "distro": null,
-    "pride_month_shown": [],
-    "pride_month_disable": false
+    "distro": "arch_small",
+    "pride_month_disable": false,
+    "custom_ascii_path": "/home/autumn/.config/fastfetch/arch3.txt"
 }

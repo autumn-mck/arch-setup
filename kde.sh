@@ -61,7 +61,7 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key FocusPolicy
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key NextFocusPrefersMouse "true"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key RollOverDesktops "true"
 
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key Scale "2"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key Scale "1.25"
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key floatingClass "org.kde.kdialog,systemsettings,bitwarden,musicbee.exe,org.freedesktop.impl.portal.desktop.kde,Godot"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key noTileBorder "true"
@@ -90,7 +90,7 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/krunnerrc" --group Plugins --key baloosea
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group Mouse --key X11LibInputXAccelProfileFlat "true"
 
 # baloofilerc
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group "Basic Settings" --key Indexing-Enabled "false"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/baloofilerc" --group "Basic Settings" --key Indexing-Enabled "false"
 
 # kwinrulesrc
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrulesrc" --group "1" --key Description "No Min Window Size"
