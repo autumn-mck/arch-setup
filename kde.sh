@@ -34,6 +34,9 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key smalles
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key toolBarFont "IBM Plex Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group WM --key activeFont "IBM Plex Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 
+# ie
+kwriteconfig6 --file "$XDG_CONFIG_HOME/plasma-localerc" --group Formats --key LANG "en_IE.UTF-8"
+
 ## KDE
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group KDE --key ScrollbarLeftClickNavigatesByPage "false"

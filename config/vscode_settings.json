@@ -1,0 +1,41 @@
+{
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "editor.comments.insertSpace": false,
+    "editor.renderWhitespace": "trailing",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.experimental.useTrueInlineView": true,
+    "workbench.startupEditor": "none",
+    "window.customTitleBarVisibility": "never",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native",
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.external.linuxExec": "kitty",
+    "telemetry.feedback.enabled": false,
+    "git.autofetch": true,
+    "git.blame.editorDecoration.enabled": true,
+    "git.enableSmartCommit": true,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "emmet.includeLanguages": {
+        "jsp": "html"
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "oxc.enable.oxfmt": true,
+    "oxc.enable": true,
+    "workbench.browser.openLocalhostLinks": false,
+    "editor.semanticHighlighting.enabled": true,
+    "terminal.integrated.minimumContrastRatio": 1,
+    "remote.SSH.connectTimeout": 30
+}

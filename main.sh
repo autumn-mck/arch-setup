@@ -43,6 +43,8 @@ mkdir -p "$XDG_CONFIG_HOME/fastfetch/"
 cp "./config/fastfetch_config.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 cp "./config/fastfetch_arch3.txt" "$XDG_CONFIG_HOME/fastfetch/arch3.txt"
 cp "./config/hyfetch.json" "$XDG_CONFIG_HOME/hyfetch.json"
+mkdir -p "$XDG_CONFIG_HOME/Code/User/"
+cp "./config/vscode_settings.json" "$XDG_CONFIG_HOME/Code/User/settings.json"
 
 # gsettings stuff
 gsettings set org.gnome.desktop.interface font-antialiasing \'rgba\'
