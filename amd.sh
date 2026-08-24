@@ -7,8 +7,8 @@ set -eu
 # vulkan support
 # monitoring
 
-paru -S --needed --noconfirm \
-	amd_ucode \
+yay -S --needed --noconfirm \
+	amd-ucode \
 	mesa lib32-mesa \
 	xf86-video-amdgpu \
 	vulkan-radeon lib32-vulkan-radeon \

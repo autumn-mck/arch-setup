@@ -1,11 +1,15 @@
 #!/bin/sh
 set -e
 
-source "$HOME/.config/environment.d/env-vars.conf"
+. "$HOME/.config/environment.d/env-vars.conf"
 
 systemctl --user enable --now syncthing.service
 
-sudo systemctl enable --now bluetooth
+sudo systemctl enable --now bluetooth paccache.timer
+
+# use kmscon for virtual consoles
+sudo systemctl disable getty@.service
+sudo systemctl enable kmsconvt@.service
 
 # git config
 git config --global init.defaultBranch main
@@ -17,19 +21,19 @@ sudo mkdir -p "/etc/systemd/system/reflector.timer.d"
 sudo cp "./config/reflector.timer.override" "/etc/systemd/system/reflector.timer.d/override.conf"
 sudo systemctl enable --now reflector.timer
 
-# set up paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-cd ..
-rm -rf "./paru"
+# set up yay
+if ! command -v yay >/dev/null 2>&1; then
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	cd ..
+	rm -rf "./yay"
+fi
 
-paru -S --needed --noconfirm $(cat ./aur-packages)
+xargs yay -S --needed --noconfirm < ./aur-packages
 
 # misc
 sudo ln -sf "/usr/share/fontconfig/conf.avail/75-twemoji.conf" "/etc/fonts/conf.d/75-twemoji.conf"
-mkdir -p "$XDG_CONFIG_HOME/Bitwarden/"
-cp "./config/bitwarden-data.json" "$XDG_CONFIG_HOME/Bitwarden/data.json"
 mkdir -p "$XDG_CONFIG_HOME/tealdeer/"
 cp "./config/tealdeer_config.toml" "$XDG_CONFIG_HOME/tealdeer/config.toml"
 mkdir -p "$XDG_CONFIG_HOME/kitty/"

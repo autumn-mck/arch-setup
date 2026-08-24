@@ -44,6 +44,7 @@ bluez-utils
 
 # terminal
 kitty
+kmscon
 
 fastfetch
 hyfetch
@@ -88,10 +89,15 @@ podman-compose
 podman-docker
 
 git
+github-cli
 codespell
 distrobox
 rust
 shellcheck
+clang
+llvm
+cmake
+extra-cmake-modules
 
 # js devel
 nodejs

@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-source "$HOME/.config/environment.d/env-vars.conf"
+. "$HOME/.config/environment.d/env-vars.conf"
 
-paru -Syu --needed --noconfirm $(cat ./kde-packages)
+xargs yay -Syu --needed --noconfirm < ./kde-packages
 
 balooctl6 suspend
 balooctl6 disable
@@ -63,7 +63,7 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key RollOverDes
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key Scale "1.25"
 
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key floatingClass "org.kde.kdialog,systemsettings,bitwarden,musicbee.exe,org.freedesktop.impl.portal.desktop.kde,Godot"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key floatingClass "org.kde.kdialog,systemsettings,bitwarden,musicbee.exe,org.freedesktop.impl.portal.desktop.kde,Godot,zoom"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key noTileBorder "true"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapBetween "8"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapBottom "8"
@@ -105,12 +105,12 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/dolphinrc" --group DetailsMode --key Prev
 
 # lightly config
 kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key DisabledForMaximized "true"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key InnerOutline "false"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key InnerOutlineColor "24,25,38"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key OuterOutlineColor "24,25,38"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key InnerOutlineWidth "2"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key OuterOutlineWidth "3"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key OuterOutline "false"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key Roundness "8"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key OuterOutlineWidth "2"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --key Roundness "10"
 
 # plasma-org.kde.plasma.desktop-appletsrc
 
@@ -127,4 +127,4 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "W
 
 sudo mkdir -p "/etc/sddm.conf.d/"
 sudo cp "./config/sddm_kde_settings.conf" "/etc/sddm.conf.d/kde_settings.conf"
-systemctl enable sddm.service
+sudo systemctl enable sddm.service

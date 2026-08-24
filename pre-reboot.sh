@@ -20,7 +20,11 @@ sudo reflector --save /etc/pacman.d/mirrorlist --latest 30 --sort rate
 # base packages
 sudo pacman -S --needed --noconfirm $(cat ./packages | grep --invert-match "#" | grep .)
 
+curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
+tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+sudo ./cachyos-repo.sh
+
 mkdir -p "$HOME/.config/environment.d/"
 cp "./config/env-vars.conf" "$HOME/.config/environment.d/"
 
-echo "probably a better way to do it, but just reboot and run main.sh, then laptop.sh"
+echo "probably a better way to do it, but just reboot and run main.sh, then amd.sh (or intel.sh)"
