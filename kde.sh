@@ -12,10 +12,10 @@ balooctl6 purge
 # KDE theme
 git clone --depth=1 https://github.com/catppuccin/kde catppuccin-kde && cd "./catppuccin-kde"
 yes | ./install.sh 2 4 1
-ln -s "$HOME/.local/share/icons/" "$HOME/.icons"
+ln -sfn "$HOME/.local/share/icons/" "$HOME/.icons"
 cd ..
 rm -rf ./catppuccin-kde
-# also copy cursors to /usr/share/icons to make sure sddm can use them
+# also copy cursors to /usr/share/icons so the login greeter can use them
 sudo cp -r "$HOME/.local/share/icons/Catppuccin-Macchiato-Mauve-Cursors/" "/usr/share/icons/Catppuccin-Macchiato-Mauve-Cursors/"
 
 # folder icons
@@ -128,6 +128,7 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "W
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Window One Desktop to the Left" "Meta+Ctrl+Shift+Left,Meta+Ctrl+Shift+Left,Window One Desktop to the Left"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Window One Desktop to the Right" "Meta+Ctrl+Shift+Right,Meta+Ctrl+Shift+Right,Window One Desktop to the Right"
 
-sudo mkdir -p "/etc/sddm.conf.d/"
-sudo cp "./config/sddm_kde_settings.conf" "/etc/sddm.conf.d/kde_settings.conf"
-sudo systemctl enable sddm.service
+# plasma-login-manager
+sudo kwriteconfig6 --file "/etc/plasmalogin.conf" --group General --key Relogin "false"
+sudo kwriteconfig6 --file "/etc/plasmalogin.conf" --group General --key ShowClock "true"
+sudo systemctl enable plasmalogin.service

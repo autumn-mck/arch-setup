@@ -23,6 +23,7 @@ sudo pacman -S --needed --noconfirm $(cat ./packages | grep --invert-match "#" |
 curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
 tar xvf cachyos-repo.tar.xz && cd cachyos-repo
 sudo ./cachyos-repo.sh
+cd ..
 
 mkdir -p "$HOME/.config/environment.d/"
 cp "./config/env-vars.conf" "$HOME/.config/environment.d/"

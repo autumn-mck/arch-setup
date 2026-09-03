@@ -12,4 +12,5 @@ yay -S --needed --noconfirm \
 	mesa lib32-mesa \
 	xf86-video-amdgpu \
 	vulkan-radeon lib32-vulkan-radeon \
+	libva-utils \
 	amdgpu_top

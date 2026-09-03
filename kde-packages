@@ -1,8 +1,7 @@
 phonon-qt6-vlc
 kdialog
 
-sddm
-sddm-kcm
+plasma-login-manager
 kwallet-pam
 
 plasma-desktop
