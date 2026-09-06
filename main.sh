@@ -7,6 +7,22 @@ systemctl --user enable --now syncthing.service
 
 sudo systemctl enable --now bluetooth paccache.timer
 
+# firewall
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw default deny routed
+sudo ufw logging low
+sudo ufw app default skip
+
+sudo ufw allow syncthing
+
+# Civ6 LAN
+sudo ufw allow from 192.168.0.52 to any port 62056 proto udp
+sudo ufw allow from 192.168.0.52 to any port 62900 proto udp
+
+sudo ufw --force enable
+sudo systemctl enable --now ufw.service
+
 # use kmscon for virtual consoles
 sudo systemctl disable getty@.service
 sudo systemctl enable kmsconvt@.service
