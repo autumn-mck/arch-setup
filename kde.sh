@@ -123,14 +123,25 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/lightlyshaders.conf" --group "General" --
 
 
 # kglobalshortcutsrc
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Switch One Desktop Down" "Meta+Ctrl+Down,Meta+Ctrl+Down,Switch One Desktop Down"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Switch One Desktop Up" "Meta+Ctrl+Up,Meta+Ctrl+Up,Switch One Desktop Up"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Switch One Desktop to the Left" "Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Switch One Desktop to the Right" "Meta+Ctrl+Right,Meta+Ctrl+Right,Switch One Desktop to the Right"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Window One Desktop Down" "Meta+Ctrl+Shift+Down,Meta+Ctrl+Shift+Down,Window One Desktop Down"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Window One Desktop Up" "Meta+Ctrl+Shift+Up,Meta+Ctrl+Shift+Up,Window One Desktop Up"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Window One Desktop to the Left" "Meta+Ctrl+Shift+Left,Meta+Ctrl+Shift+Left,Window One Desktop to the Left"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key "Window One Desktop to the Right" "Meta+Ctrl+Shift+Right,Meta+Ctrl+Shift+Right,Window One Desktop to the Right"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key Overview 'none,Meta+W,Toggle Overview'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key 'Show Desktop' 'none,Meta+D,Peek at Desktop'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key 'Window Close' 'Alt+F4	Meta+C,Alt+F4,Close Window'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key 'Window On All Desktops' 'Meta+D,none,Keep Window on All Desktops'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group plasmashell --key 'manage activities' 'none,Meta+Q,Show Activity Switcher'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group plasmashell --key 'previous activity' 'Meta+Shift+A,none,Walk through activities (Reverse)'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group plasmashell --key 'show dashboard' 'none,Ctrl+F12,Show Desktop'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group librewolf.desktop --key new-window Meta+W
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group code.desktop --key _launch Meta+A
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group kitty.desktop --key _launch Meta+Q
+
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group systemsettings.desktop --key _launch '	Tools'
+
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key KrohnkiteFocusNext 'none,none,Krohnkite: Focus Next'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key KrohnkiteFocusRight 'none,none,Krohnkite: Focus Right'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key KrohnkiteDecrease 'none,none,Krohnkite: Decrease'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key KrohnkiteRotate 'none,none,Krohnkite: Rotate'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key KrohnkiteRotatePart 'none,none,Krohnkite: Rotate Part'
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key KrohnkiteTileLayout 'none,none,Krohnkite: Tile Layout'
 
 # plasma-login-manager
 sudo kwriteconfig6 --file "/etc/plasmalogin.conf" --group General --key Relogin "false"
