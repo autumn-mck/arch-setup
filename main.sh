@@ -24,6 +24,8 @@ sudo ufw --force enable
 sudo systemctl enable --now ufw.service
 
 # use kmscon for virtual consoles
+sudo mkdir -p "/etc/kmscon"
+sudo cp "./config/kmscon.conf" "/etc/kmscon/kmscon.conf"
 sudo systemctl disable getty@.service
 sudo systemctl enable kmsconvt@.service
 
