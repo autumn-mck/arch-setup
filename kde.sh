@@ -62,9 +62,11 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group NightColor --key NightTem
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key DelayFocusInterval "0"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key FocusPolicy "FocusFollowsMouse"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key NextFocusPrefersMouse "true"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key PerOutputVirtualDesktops "true"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key RollOverDesktops "true"
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key Scale "1.25"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key XwaylandEisNoPromptApps "xdotool"
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key floatingClass "org.kde.kdialog,systemsettings,bitwarden,musicbee.exe,org.freedesktop.impl.portal.desktop.kde,Godot,zoom"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key noTileBorder "true"
@@ -84,6 +86,8 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/ksmserverrc" --group General --key loginM
 # kscreenlockerrc
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kscreenlockerrc" --group Daemon --key LockGrace "30"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kscreenlockerrc" --group Daemon --key Timeout "15"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kscreenlockerrc" --group Greeter --group LnF --group General --key alwaysShowClock "false"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kscreenlockerrc" --group Greeter --group LnF --group General --key showMediaControls "false"
 
 # krunnerrc
 kwriteconfig6 --file "$XDG_CONFIG_HOME/krunnerrc" --group General --key FreeFloating "true"

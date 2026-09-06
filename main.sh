@@ -64,6 +64,9 @@ cp "./config/hyfetch.json" "$XDG_CONFIG_HOME/hyfetch.json"
 mkdir -p "$XDG_CONFIG_HOME/Code/User/"
 cp "./config/vscode_settings.json" "$XDG_CONFIG_HOME/Code/User/settings.json"
 
+mkdir -p "$HOME/.librewolf"
+cp "./config/librewolf.overrides.cfg.js" "$HOME/.librewolf/librewolf.overrides.cfg"
+
 # gsettings stuff
 gsettings set org.gnome.desktop.interface font-antialiasing \'rgba\'
 gsettings set org.gnome.desktop.interface gtk-theme \'catppuccin-macchiato-mauve-standard+default\'
