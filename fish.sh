@@ -8,3 +8,4 @@ fish -c "fisher install $fisher_packages"
 
 mkdir -p "$HOME/.config/fish/functions"
 cp ./config/fish/functions/*.fish "$HOME/.config/fish/functions/"
+cp ./config/bashrc "$HOME/.bashrc"
