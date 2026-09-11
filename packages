@@ -89,6 +89,7 @@ podman-compose
 podman-docker
 
 git
+git-lfs
 github-cli
 codespell
 distrobox

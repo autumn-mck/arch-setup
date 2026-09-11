@@ -31,6 +31,7 @@ sudo systemctl enable kmsconvt@.service
 
 # git config
 git config --global init.defaultBranch main
+git lfs install
 
 # reflector
 sudo mkdir -p "/etc/xdg/reflector"
@@ -63,6 +64,12 @@ cp "./config/fastfetch_arch3.txt" "$XDG_CONFIG_HOME/fastfetch/arch3.txt"
 cp "./config/hyfetch.json" "$XDG_CONFIG_HOME/hyfetch.json"
 mkdir -p "$XDG_CONFIG_HOME/Code/User/"
 cp "./config/vscode_settings.json" "$XDG_CONFIG_HOME/Code/User/settings.json"
+cp "./config/code-flags.conf" "$XDG_CONFIG_HOME/code-flags.conf"
+cp "./config/electron-flags.conf" "$XDG_CONFIG_HOME/electron-flags.conf"
+
+while IFS= read -r extension; do
+	[ -n "$extension" ] && code --install-extension "$extension"
+done < "./config/vscode_extensions"
 
 mkdir -p "$HOME/.librewolf"
 cp "./config/librewolf.overrides.cfg.js" "$HOME/.librewolf/librewolf.overrides.cfg"
