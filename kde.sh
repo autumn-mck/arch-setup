@@ -56,6 +56,8 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Effect-slide --key Horizo
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Effect-slide --key VerticalGap "0"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Effect-slide --key SlideBackground "false"
 
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group ModifierOnlyShortcuts --key Meta "org.kde.krunner,/App,,toggleDisplay"
+
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group NightColor --key Active "true"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group NightColor --key NightTemperature "4400"
 
