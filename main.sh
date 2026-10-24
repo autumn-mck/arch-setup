@@ -74,6 +74,9 @@ done < "./config/vscode_extensions"
 mkdir -p "$HOME/.librewolf"
 cp "./config/librewolf.overrides.cfg.js" "$HOME/.librewolf/librewolf.overrides.cfg"
 
+sudo mkdir -p "/etc/thunderbird/policies"
+sudo cp "./config/thunderbird-policies.json" "/etc/thunderbird/policies/policies.json"
+
 sudo mkdir -p "/etc/chromium/policies/recommended"
 sudo cp "./config/helium-policy.json" "/etc/chromium/policies/recommended/helium.json"
 sudo mkdir -p "/etc/chromium/policies/managed"

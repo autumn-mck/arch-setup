@@ -1,0 +1,48 @@
+{
+	"policies": {
+		"Preferences": {
+			"mail.tabs.drawInTitlebar": {
+				"Value": false,
+				"Status": "default"
+			},
+			"mail.shell.checkDefaultClient": {
+				"Value": false,
+				"Status": "default"
+			},
+			"mail.fixed_width_messages": {
+				"Value": false,
+				"Status": "default"
+			},
+			"searchintegration.enable": {
+				"Value": false,
+				"Status": "default"
+			},
+			"calendar.timezone.useSystemTimezone": {
+				"Value": true,
+				"Status": "default"
+			},
+			"font.name.monospace.x-western": {
+				"Value": "mononoki",
+				"Status": "default"
+			},
+			"font.name.sans-serif.x-western": {
+				"Value": "IBM Plex Sans",
+				"Status": "default"
+			},
+			"font.name.serif.x-western": {
+				"Value": "IBM Plex Sans",
+				"Status": "default"
+			},
+			"mail.identity.default.reply_on_top": {
+				"Value": 1,
+				"Status": "default"
+			}
+		},
+		"ExtensionSettings": {
+			"{353b22c0-f6d4-5913-ae10-87bbcd9abdd4}": {
+				"installation_mode": "normal_installed",
+				"install_url": "https://raw.githubusercontent.com/catppuccin/thunderbird/main/themes/macchiato/macchiato-mauve.xpi"
+			}
+		}
+	}
+}
