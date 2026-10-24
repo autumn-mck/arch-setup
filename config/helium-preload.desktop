@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Helium Browser (preload)
+Exec=helium-browser --no-startup-window --keep-alive-for-test
+Icon=helium-browser
+NoDisplay=true
+X-KDE-autostart-phase=2

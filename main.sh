@@ -74,6 +74,21 @@ done < "./config/vscode_extensions"
 mkdir -p "$HOME/.librewolf"
 cp "./config/librewolf.overrides.cfg.js" "$HOME/.librewolf/librewolf.overrides.cfg"
 
+sudo mkdir -p "/etc/chromium/policies/recommended"
+sudo cp "./config/helium-policy.json" "/etc/chromium/policies/recommended/helium.json"
+sudo mkdir -p "/etc/chromium/policies/managed"
+sudo cp "./config/helium-policy-managed.json" "/etc/chromium/policies/managed/helium.json"
+
+pkill -x helium && sleep 2 || true
+helium_profile="$XDG_CONFIG_HOME/net.imput.helium/Default"
+mkdir -p "$helium_profile"
+[ -f "$helium_profile/Preferences" ] || echo "{}" > "$helium_profile/Preferences"
+jq -s '.[0] * .[1]' "$helium_profile/Preferences" "./config/helium-prefs.json" > "$helium_profile/Preferences.new"
+mv "$helium_profile/Preferences.new" "$helium_profile/Preferences"
+
+mkdir -p "$XDG_CONFIG_HOME/autostart/"
+cp "./config/helium-preload.desktop" "$XDG_CONFIG_HOME/autostart/helium-preload.desktop"
+
 # gsettings stuff
 gsettings set org.gnome.desktop.interface font-antialiasing \'rgba\'
 gsettings set org.gnome.desktop.interface gtk-theme \'catppuccin-macchiato-mauve-standard+default\'

@@ -1,0 +1,14 @@
+{
+	"BackgroundModeEnabled": true,
+	"PromptForDownloadLocation": true,
+	"SpellcheckEnabled": false,
+	"DefaultSearchProviderEnabled": true,
+
+	"DefaultSearchProviderName": "Kagi",
+	"DefaultSearchProviderKeyword": "kagi.com",
+	"DefaultSearchProviderSearchURL": "https://kagi.com/search?q={searchTerms}",
+	"DefaultSearchProviderSuggestURL": "https://kagisuggest.com/api/autosuggest?q={searchTerms}",
+	"DefaultSearchProviderIconURL": "https://kagi.com/favicon-32x32.png?v=2",
+	"DefaultSearchProviderImageURL": "https://kagi.com/reverse/upload",
+	"DefaultSearchProviderImageURLPostParams": "file={google:imageThumbnail}"
+}

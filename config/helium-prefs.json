@@ -1,0 +1,33 @@
+{
+	"helium": {
+		"browser": {
+			"layout": 2,
+			"centered_location_bar": true,
+			"show_progress_bar": true,
+			"new_tab_next_to_active": true,
+			"show_avatar_button": false,
+			"rounded_frame": false
+		}
+	},
+	"browser": {
+		"custom_chrome_frame": false,
+		"theme": {
+			"color_scheme2": 0,
+			"color_variant2": 1,
+			"follows_system_colors": false,
+			"user_color2": -16760880
+		}
+	},
+	"extensions": {
+		"theme": {
+			"id": "user_color_theme_id"
+		}
+	},
+	"side_panel": {
+		"is_right_aligned": true
+	},
+	"vertical_tabs": {
+		"uncollapsed_width": 200,
+		"expand_on_hover": false
+	}
+}

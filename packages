@@ -56,6 +56,7 @@ glow
 
 fzf
 tree
+jq
 
 mandoc
 tealdeer
@@ -94,7 +95,6 @@ github-cli
 codespell
 distrobox
 rust
-shellcheck
 clang
 llvm
 cmake
@@ -131,8 +131,6 @@ mattermost-desktop
 libreoffice-fresh
 libreoffice-fresh-en-gb
 
-firefox-developer-edition
-firefox-developer-edition-i18n-en-gb
 librewolf
 
 protonmail-bridge

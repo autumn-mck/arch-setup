@@ -45,7 +45,7 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group KDE --key AnimationDu
 
 # kwinrc
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Desktops --key Number "8"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Desktops --key Rows "2"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Desktops --key Rows "4"
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Plugins --key blurEnabled "false"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Plugins --key lightlyshaders_blurEnabled "true"
@@ -67,16 +67,18 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key NextFocusPr
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key PerOutputVirtualDesktops "true"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key RollOverDesktops "true"
 
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key Scale "1.25"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key Scale "2"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key XwaylandEisNoPromptApps "xdotool"
 
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key floatingClass "org.kde.kdialog,systemsettings,bitwarden,musicbee.exe,org.freedesktop.impl.portal.desktop.kde,Godot,zoom"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key floatConfig "org.kde.kdialog,systemsettings,bitwarden,[nngceckbapebfimnlniiiahkandclblb],musicbee.exe,org.freedesktop.impl.portal.desktop.kde,Godot,zoom"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key ignoreClass "krunner,yakuake,spectacle,kded5,xwaylandvideobridge,plasmashell,ksplashqml,org.kde.plasmashell,org.kde.polkit-kde-authentication-agent-1,org.kde.kruler,kruler,kwin_wayland,ksmserver-logout-greeter,systemsettings,chrome-nngceckbapebfimnlniiiahkandclblb-Default"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key ignoreTitle "Bitwarden,Extension: (Bitwarden Password Manager) - Bitwarden — LibreWolf"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key noTileBorder "true"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapBetween "8"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapBottom "8"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapLeft "8"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapRight "8"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapTop "18"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapRight "18"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Script-krohnkite --key screenGapTop "8"
 
 # ksplashrc
 kwriteconfig6 --file "$XDG_CONFIG_HOME/ksplashrc" --group KSplash --key Theme "None"
@@ -132,7 +134,7 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key 'W
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group plasmashell --key 'manage activities' 'none,Meta+Q,Show Activity Switcher'
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group plasmashell --key 'previous activity' 'Meta+Shift+A,none,Walk through activities (Reverse)'
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group plasmashell --key 'show dashboard' 'none,Ctrl+F12,Show Desktop'
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group librewolf.desktop --key new-window Meta+W
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group helium.desktop --key new-window Meta+W
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group code.desktop --key _launch Meta+A
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group kitty.desktop --key _launch Meta+Q
 

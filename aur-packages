@@ -3,10 +3,9 @@ xdg-ninja
 
 ttf-twemoji
 
-ungoogled-chromium-bin
-
 visual-studio-code-bin
 xpadneo-dkms
 helium-browser-bin
 itch-bin
 ttf-mononoki
+shellcheck-bin
