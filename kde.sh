@@ -18,9 +18,6 @@ rm -rf ./catppuccin-kde
 # also copy cursors to /usr/share/icons so the login greeter can use them
 sudo cp -r "$HOME/.local/share/icons/Catppuccin-Macchiato-Mauve-Cursors/" "/usr/share/icons/Catppuccin-Macchiato-Mauve-Cursors/"
 
-# folder icons
-papirus-folders -C cat-macchiato-mauve
-
 # kdeglobals
 
 ## General
@@ -34,8 +31,16 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key smalles
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key toolBarFont "IBM Plex Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group WM --key activeFont "IBM Plex Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key TerminalApplication "kitty"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group General --key TerminalService "kitty.desktop"
+
+# KB = 1024 bytes
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kdeglobals" --group Locale --key BinaryUnitDialect "1"
+
 # ie
 kwriteconfig6 --file "$XDG_CONFIG_HOME/plasma-localerc" --group Formats --key LANG "en_IE.UTF-8"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kxkbrc" --group Layout --key LayoutList "ie"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kxkbrc" --group Layout --key Use "true"
 
 ## KDE
 
@@ -56,6 +61,9 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Effect-slide --key Horizo
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Effect-slide --key VerticalGap "0"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Effect-slide --key SlideBackground "false"
 
+# no screen edge for overview
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Effect-overview --key BorderActivate "9"
+
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group ModifierOnlyShortcuts --key Meta "org.kde.krunner,/App,,toggleDisplay"
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group NightColor --key Active "true"
@@ -64,7 +72,6 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group NightColor --key NightTem
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key DelayFocusInterval "0"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key FocusPolicy "FocusFollowsMouse"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key NextFocusPrefersMouse "true"
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key PerOutputVirtualDesktops "true"
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Windows --key RollOverDesktops "true"
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kwinrc" --group Xwayland --key Scale "2"
@@ -98,7 +105,31 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/krunnerrc" --group General --key FreeFloa
 kwriteconfig6 --file "$XDG_CONFIG_HOME/krunnerrc" --group Plugins --key baloosearchEnabled "false"
 
 # kcminputrc
-kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group Mouse --key X11LibInputXAccelProfileFlat "true"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group Mouse --key cursorSize "48"
+# flat acceleration for mice
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group Libinput --group 1133 --group 45108 --group "Logitech MX Master 3S" --key PointerAccelerationProfile "1"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group Libinput --group 1133 --group 49291 --group "Logitech G502 HERO Gaming Mouse" --key PointerAccelerationProfile "1"
+# framework touchpad
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group Libinput --group 2362 --group 628 --group "PIXA3854:00 093A:0274 Touchpad" --key NaturalScroll "true"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kcminputrc" --group Libinput --group 2362 --group 628 --group "PIXA3854:00 093A:0274 Touchpad" --key DisableWhileTyping "false"
+
+# powerdevilrc
+kwriteconfig6 --file "$XDG_CONFIG_HOME/powerdevilrc" --group AC --group Display --key DimDisplayIdleTimeoutSec "600"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/powerdevilrc" --group AC --group Display --key TurnOffDisplayIdleTimeoutSec "900"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/powerdevilrc" --group AC --group SuspendAndShutdown --key AutoSuspendIdleTimeoutSec "1800"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/powerdevilrc" --group AC --group SuspendAndShutdown --key LidAction "0"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/powerdevilrc" --group Battery --group Display --key DimDisplayIdleTimeoutSec "300"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/powerdevilrc" --group Battery --group Display --key TurnOffDisplayIdleTimeoutSec "600"
+
+# kiorc
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kiorc" --group Confirmations --key ConfirmDelete "false"
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kiorc" --group Confirmations --key ConfirmTrash "false"
+
+# kaccessrc
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kaccessrc" --group Bell --key SystemBell "false"
+
+# plasmanotifyrc
+kwriteconfig6 --file "$XDG_CONFIG_HOME/plasmanotifyrc" --group Notifications --key PopupPosition "TopRight"
 
 # baloofilerc
 kwriteconfig6 --file "$XDG_CONFIG_HOME/baloofilerc" --group "Basic Settings" --key Indexing-Enabled "false"
@@ -137,6 +168,7 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group plasmashell -
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group helium.desktop --key new-window Meta+W
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group code.desktop --key _launch Meta+A
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group kitty.desktop --key _launch Meta+Q
+kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group org.kde.spectacle.desktop --key RectangularRegionScreenShot 'Meta+S	Meta+Shift+Print'
 
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group services --group systemsettings.desktop --key _launch '	Tools'
 
@@ -148,6 +180,6 @@ kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key Kr
 kwriteconfig6 --file "$XDG_CONFIG_HOME/kglobalshortcutsrc" --group kwin --key KrohnkiteTileLayout 'none,none,Krohnkite: Tile Layout'
 
 # plasma-login-manager
-sudo kwriteconfig6 --file "/etc/plasmalogin.conf" --group General --key Relogin "false"
-sudo kwriteconfig6 --file "/etc/plasmalogin.conf" --group General --key ShowClock "true"
+sudo kwriteconfig6 --file "/etc/plasmalogin.conf" --group Autologin --key Relogin "false"
+sudo kwriteconfig6 --file "/etc/plasmalogin.conf" --group Greeter --key ShowClock "true"
 sudo systemctl enable plasmalogin.service
