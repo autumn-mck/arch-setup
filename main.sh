@@ -5,7 +5,7 @@ set -e
 
 systemctl --user enable --now syncthing.service
 
-sudo systemctl enable --now bluetooth paccache.timer
+sudo systemctl enable --now bluetooth paccache.timer smartd btrfs-scrub@-.timer
 
 # firewall
 sudo ufw default deny incoming
@@ -40,6 +40,11 @@ sudo mkdir -p "/etc/systemd/system/reflector.timer.d"
 sudo cp "./config/reflector.timer.override" "/etc/systemd/system/reflector.timer.d/override.conf"
 sudo systemctl enable --now reflector.timer
 
+# cap the system journal
+sudo mkdir -p "/etc/systemd/journald.conf.d"
+sudo cp "./config/journald-size.conf" "/etc/systemd/journald.conf.d/size.conf"
+sudo systemctl restart systemd-journald
+
 # set up yay
 if ! command -v yay >/dev/null 2>&1; then
 	git clone https://aur.archlinux.org/yay.git
@@ -62,17 +67,20 @@ mkdir -p "$XDG_CONFIG_HOME/fastfetch/"
 cp "./config/fastfetch_config.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 cp "./config/fastfetch_arch3.txt" "$XDG_CONFIG_HOME/fastfetch/arch3.txt"
 cp "./config/hyfetch.json" "$XDG_CONFIG_HOME/hyfetch.json"
+mkdir -p "$XDG_DATA_HOME"
+printf 'hsts-file = %s\n' "$XDG_DATA_HOME/wget-hsts" > "$XDG_CONFIG_HOME/wgetrc"
 mkdir -p "$XDG_CONFIG_HOME/Code/User/"
 cp "./config/vscode_settings.json" "$XDG_CONFIG_HOME/Code/User/settings.json"
 cp "./config/code-flags.conf" "$XDG_CONFIG_HOME/code-flags.conf"
+printf '%s\n' "--extensions-dir=$XDG_DATA_HOME/vscode/extensions" "--shared-data-dir=$XDG_DATA_HOME/vscode/shared-data" >> "$XDG_CONFIG_HOME/code-flags.conf"
 cp "./config/electron-flags.conf" "$XDG_CONFIG_HOME/electron-flags.conf"
 
 while IFS= read -r extension; do
 	[ -n "$extension" ] && code --install-extension "$extension"
 done < "./config/vscode_extensions"
 
-mkdir -p "$HOME/.librewolf"
-cp "./config/librewolf.overrides.cfg.js" "$HOME/.librewolf/librewolf.overrides.cfg"
+mkdir -p "$XDG_CONFIG_HOME/librewolf/librewolf"
+cp "./config/librewolf.overrides.cfg.js" "$XDG_CONFIG_HOME/librewolf/librewolf/librewolf.overrides.cfg"
 
 sudo mkdir -p "/etc/thunderbird/policies"
 sudo cp "./config/thunderbird-policies.json" "/etc/thunderbird/policies/policies.json"
